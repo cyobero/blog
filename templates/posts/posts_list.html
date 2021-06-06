@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col">
+			<h2>My blog</h2>
+		</div>
+		<div class="col"></div>
+	</div>
+	<div class="row">
+		<div class="col"></div>
+		<div class="col-md-5">
+			{% for post in posts %}
+			<h3>{{post.title}}</h3>
+			<p>by  {{post.author}} <small>{{post.publish}}</small>
+			</p>
+			<p>
+			{% lorem 30 w random %}
+			<small><a href="{{post.get_absolute_url}}">Read more..</a></small>
+			</p>
+			{% endfor %}
+		</div>
+		<div class="col"></div>
+	</div>
+</div>
+</div>
+{% endblock %}
